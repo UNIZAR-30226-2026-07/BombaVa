@@ -1,0 +1,26 @@
+# Entornos Virtuales de Python (MkDocs)
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Directorio de construcción de MkDocs
+site/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración del IDE
+.vscode/
+.idea/
+
+# Variables de entorno
+.env
+.env.local
+
+# Orquestados
+BombaVa-FrontendMovil/
+BombaVa-FrontendWeb/
+BombaVa-Backend/

@@ -1,0 +1,76 @@
+site_name: BombaVa Technical Documentation
+site_url: https://unizar-30226-2026-07.github.io/BombaVa/
+theme:
+  name: material
+  language: es
+  palette:
+    # Esquema para modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    # Esquema para modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - content.code.copy
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+
+nav:
+  - Inicio: index.md
+  - Arquitectura del Sistema:
+      - Visión General: architecture/overview.md
+      - Modelo de Persistencia: architecture/persistence.md
+      - Networking y Visión: architecture/networking.md
+      - Mecánicas Algorítmicas: architecture/game-mechanics.md
+      - Integración de Sistemas: architecture/system-integration.md
+      - Gestión de Errores: architecture/error-handling.md
+      - Topología de Despliegue: architecture/deployment.md
+  - Módulos de Dominio:
+      - Engine (Motor Táctico): domain/engine.md
+      - Game (Gestión de Partida): domain/game.md
+      - Inventory (Puerto): domain/inventory.md
+      - Auth (Seguridad): domain/auth.md
+  - Arquitectura Frontend:
+      - Web (React): frontends/web-architecture.md
+      - Móvil (Android): frontends/mobile-architecture.md
+  - API y Protocolos:
+      - Eventos WebSocket: api/sockets.md
+      - Endpoints REST: api/rest.md
+  - Guías de Equipo:
+      - Instalación: guides/installation.md
+      - Extensibilidad: guides/extensibility.md
+      - Testing y QA: guides/testing.md
+      - CI/CD Pipeline: guides/cicd.md
